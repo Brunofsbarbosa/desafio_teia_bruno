@@ -1,3 +1,15 @@
-<p>
-  albuns works!
-</p>
+<div class="row">
+  <div class="col" *ngFor="let item of arrayDadosApi()">
+    <!-- <img class="img" height="100px" [src]="urlFoto"> -->
+    <mat-card class="card"   (click)="dadosDetalhadoGaleria(item.dados)">
+      <mat-card-content class="card-content">
+        <span>{{item.albumId}}</span>
+      </mat-card-content>
+    </mat-card>
+<!-- <app-album-detalhado></app-album-detalhado> routerLink="albumDetalhado"-->
+    <!-- <div *ngFor="let teste of item.dados">
+      <span>{{teste.id}}</span>
+
+    </div> -->
+  </div>
+</div>
