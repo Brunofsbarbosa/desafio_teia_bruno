@@ -7,9 +7,20 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
+      // {
+      //   path: '',
+      //   component: PrincipalComponent
+      // },
       {
         path: '',
-        component: HomeComponent
+
+        redirectTo: '/principal',
+        pathMatch: 'full'
+      },
+      {
+          path: 'principal',
+          loadChildren: () => import('./features/principal/principal.module').then(m => m.PrincipalModule),
+
       },
     ]
 },

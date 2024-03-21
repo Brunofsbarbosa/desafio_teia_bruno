@@ -14,6 +14,9 @@ export class HomeService {
   private httpService = inject(HttpService);
   private appStore = inject(AppStore);
 
+  // private appStore = inject(AppStore);
+  // public arrayDadosApi = computed(() => this.appStore.arrayDadosApi())
+
   constructor() { }
 
   retornaArrayDadosApi(){

@@ -1,7 +1,7 @@
-import { Component, OnInit, computed, effect, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 
 import { HomeService } from './home.service';
-import { AppStore } from '../../core/store/app.store';
+// import { AppStore } from '../../core/store/app.store';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +11,9 @@ import { AppStore } from '../../core/store/app.store';
 export class HomeComponent implements OnInit {
 
   private homeService = inject(HomeService);
-  private appStore = inject(AppStore);
+  // private appStore = inject(AppStore);
 
-  public arrayDadosApi = computed(() => this.appStore.arrayDadosApi())
+  // public arrayDadosApi = computed(() => this.appStore.arrayDadosApi())
 
   constructor() {
     // effect(()=> console.log('resposta', this.appStore.arrayDadosApi()))
