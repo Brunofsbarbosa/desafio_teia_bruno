@@ -19,11 +19,7 @@ export class AlbunsComponent implements OnInit {
 
   public arrayPaginado = computed<IAlbum[]>(() => this.arraysDivididos(this.appStore.arrayDadosApi())[this.posicao()]);
 
-  constructor() {
-
-    // effect(()=>{ if(this.appStore.arrayDadosApi()){this.posicao.set(0)}})
-
-  }
+  constructor() { }
 
   dadosDetalhadoGaleria(dados: any){
     this.appStore.updateArrayDadosDetalhados(dados)

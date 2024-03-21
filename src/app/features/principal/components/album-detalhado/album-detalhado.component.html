@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col" *ngFor="let item of arrayDadosDetalhados()">
+  <div class="col" *ngFor="let item of arrayDadosDetalhadosPaginado()">
     <!-- <img class="img" height="100px" [src]="urlFoto"> -->
     <mat-card class="card">
       <mat-card-content class="card-content">
@@ -13,4 +13,6 @@
 
     </div> -->
   </div>
+  <span (click)="avancaPaginacao()">avança</span>
+  <span (click)="retornaPaginacao()">retorna</span>
 </div>
