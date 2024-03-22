@@ -1,7 +1,9 @@
-import { Component, OnInit, computed, effect, inject, signal } from '@angular/core';
+import { Component, OnInit, Signal, computed, effect, inject, signal } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { AppStore } from '../../../../core/store/app.store';
 import IAlbum from '../../models/album.interface';
-import { Router } from '@angular/router';
+import { Utils } from '../../../../shared/utils.ts/utils';
 
 @Component({
   selector: 'app-album-detalhado',
@@ -16,14 +18,24 @@ export class AlbumDetalhadoComponent implements OnInit {
   public posicao = signal(0);
   public posicaoMaxima = signal(10);
   public tamanhoArrayDividido: number = 0;
+  textoInput: string = '';
+  textoFiltroDocumentos = signal('');
+  corBorda = '#005CA9';
+  ordemCrescente = signal(false);
 
-  // public arrayDadosDetalhados = computed<IAlbum[]>(() => this.appStore.arrayDadosDetalhados() ? this.appStore.arrayDadosDetalhados() : [] as IAlbum[])
-  public arrayDadosDetalhadosPaginado = computed<IAlbum[]>(() => this.arraysDivididos(this.appStore.arrayDadosDetalhados())[this.posicao()]);
 
+  public arrayDadosDetalhadosPaginado = computed<IAlbum[]>(() => {
 
+    const arrayDadosFiltroInput = this.retornaArrayFiltrado(this.appStore.arrayDadosDetalhados());
+    const arrayDadosOrdenados = this.retornaArrayOrdenado(arrayDadosFiltroInput);
+    const arrayDadosDividido = this.arraysDivididos(arrayDadosOrdenados)[this.posicao()];
+
+    return arrayDadosDividido;
+
+  });
 
   constructor() {
-    // effect(()=> console.log('detalhados', this.appStore.arrayDadosDetalhados()))
+
     this.appStore.arrayDadosDetalhados().length > 0 ? true : this.router.navigate(['principal']);
   }
 
@@ -51,6 +63,37 @@ export class AlbumDetalhadoComponent implements OnInit {
 
     this.tamanhoArrayDividido = arraysDivididos.length
     return arraysDivididos
+  }
+
+  retornaArrayFiltrado(array: IAlbum[]){
+
+    const arrayFiltrado = this.textoFiltroDocumentos().length > 0 ?
+    array.filter(e => e.id == Utils.normalizarTexto(this.textoFiltroDocumentos()) || Utils.normalizarTexto(e.title).includes(Utils.normalizarTexto(this.textoFiltroDocumentos())))
+    : array;
+
+    return arrayFiltrado;
+  }
+
+  limparInput() {
+
+    this.textoInput = '';
+    this.textoFiltroDocumentos.set(this.textoInput);
+  }
+
+  atualizaTextoParaFiltro(){
+
+    this.textoFiltroDocumentos.set(this.textoInput);
+  }
+
+  retornaArrayOrdenado(arrayDados: IAlbum[]){
+
+    return arrayDados.sort((a: any, b: any) => this.ordemCrescente() ?  b.id - a.id : a.id - b.id);
+  }
+
+  alteraOrdenacaoDadosArray() {
+
+    this.ordemCrescente.set(!this.ordemCrescente());
+
   }
 
   ngOnInit() {

@@ -1,6 +1,6 @@
 export default interface IAlbum {
-	albumId: number,
-  id: number,
+	albumId: number ,
+  id: number | string,
   thumbnailUrl: string,
   title: string,
   url: string,

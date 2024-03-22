@@ -6,6 +6,7 @@ import { MaterialModule } from '../../shared/material-module';
 import { PrincipalRoutes } from './principal.routing';
 import { RouterModule } from '@angular/router';
 import { AlbumDetalhadoComponent } from './components/album-detalhado/album-detalhado.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,6 +16,7 @@ import { AlbumDetalhadoComponent } from './components/album-detalhado/album-deta
     CommonModule,
     MaterialModule,
     RouterModule.forChild(PrincipalRoutes),
+    FormsModule
   ]
 })
 export class PrincipalModule { }

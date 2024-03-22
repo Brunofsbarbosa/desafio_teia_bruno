@@ -1,0 +1,92 @@
+.limpar{
+  padding: 0;
+}
+
+::ng-deep .form-pesquisa .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  padding-top: 9px;
+}
+
+::ng-deep .mat-mdc-icon-button .mat-mdc-button-persistent-ripple{
+  border-radius: 0px;
+}
+
+// ::ng-deep .mat-mdc-form-field-hint-wrapper {
+//   background: $danger-standard;
+//   border-radius: 4px;
+//   padding: 0 5px !important;
+// }
+
+::ng-deep .form-pesquisa .mat-mdc-text-field-wrapper {
+  height: 40px !important;
+  width: 350px !important;
+  border-radius: 4px;
+}
+
+.form-pesquisa input::placeholder {
+  color: #8fb5bc;
+}
+
+.form-pesquisa:hover input::placeholder {
+  color: #3a4859;
+}
+
+.form-pesquisa:focus input::placeholder {
+  color: #3a4859;
+}
+
+::ng-deep .form-pesquisa .mdc-text-field--outlined {
+  --mdc-outlined-text-field-focus-outline-width: 1px
+}
+
+::ng-deep .btn-limpar.mat-mdc-icon-button.mat-mdc-button-base {
+  padding-top: 0px;
+}
+
+
+
+
+
+
+// ::ng-deep .input-pesquisa .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+//   padding-top: 9px;
+// }
+
+// ::ng-deep .input-pesquisa .mat-mdc-text-field-wrapper {
+//   height: 40px !important;
+//   width: 332px !important;
+//   background-color: white;
+// }
+
+// ::ng-deep .input-pesquisa  .mdc-text-field--outlined {
+//   --mdc-outlined-text-field-focus-outline-width: 1px!important;
+//   // --mdc-outlined-text-field-input-text-color: #8fb5bc;
+//   --mdc-outlined-text-field-input-text-color: #3a4859;
+//   --mdc-outlined-text-field-hover-outline-color: #8fb5bc;
+//   --mdc-outlined-text-field-outline-color: #8fb5bc;
+// }
+
+// ::ng-deep .input-pesquisa  .mdc-text-field--focused {
+//   --mdc-outlined-text-field-focus-outline-width: 1px!important;
+//   --mdc-outlined-text-field-focus-outline-color: #8fb5bc;
+// }
+
+// ::ng-deep .input-pesquisa .mat-mdc-form-field-subscript-wrapper {
+//   display: none;
+// }
+
+
+// // define a cor do placeholder
+// .input-pesquisa input::placeholder {
+//   // color: $cinza-darker-2;
+//   color: #8fb5bc;
+// }
+
+// .icone-pesquisa{
+//   font-size: 24px!important;
+//   padding-top: -6px!important;
+//   // background-color: $cinza-darker-2;
+//   background-color: #8fb5bc;
+//   color: white;
+//   // margin-left: -22px;
+// }
+// //
