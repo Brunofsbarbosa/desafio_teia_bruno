@@ -1,3 +1,29 @@
 .conteiner {
-  height: 100%;
+  min-height: 84vh;
+
 }
+
+.col-card-informacoes {
+  background-color: #AFCACF;
+  // clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+}
+.col-album {
+  // clip-path: polygon(0 0, 100% 1%, 100% 100%, 20% 100%);
+  border: 1px solid red;
+}
+.div-conteiner-album {
+  max-width: 700px;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.div-titulo{
+  margin-bottom: 30px;
+}
+
+.titulo {
+  font-family: 'Caixa Sm BD';
+  font-size: 20px;
+  color: #3a4859;
+}
+

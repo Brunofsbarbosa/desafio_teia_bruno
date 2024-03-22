@@ -1,21 +1,17 @@
 <div class="row g-0">
-  <div class="col" *ngFor="let item of arrayPaginado()">
-    <!-- <img class="img" height="100px" [src]="urlFoto"> -->
+  <div class="col div-col" *ngFor="let item of arrayPaginado()">
     <mat-card class="card" (click)="dadosDetalhadoGaleria(item.dados)">
       <mat-card-content class="card-content">
-        <span>{{item.albumId}}</span>
+        <span class="id-album">{{item.albumId}}</span>
       </mat-card-content>
     </mat-card>
-    <!-- <app-album-detalhado></app-album-detalhado> -->
-    <!-- <div *ngFor="let teste of item.dados">
-      <span>{{teste.id}}</span>
-
-    </div> -->
   </div>
-  <span (click)="avancaPaginacao()">avança</span>
-  <span (click)="retornaPaginacao()">retorna</span>
-
+  <div class="row">
+    <div class="col">
+    <mat-icon class="icone" (click)="retornaPaginacao()" [style]="this.posicao() > 0 ? '' : 'opacity: 0.5'">arrow_back_ios</mat-icon>
+      <mat-icon class="icone" (click)="avancaPaginacao()" [style]=" this.posicao() < this.arrayPaginado().length -1 ? '' : 'opacity: 0.5'">arrow_forward_ios</mat-icon>
+    </div>
+  </div>
 </div>
-
 
 
