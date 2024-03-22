@@ -13,29 +13,35 @@ export class AlbunsComponent implements OnInit {
 
   private appStore = inject(AppStore);
   private router = inject(Router);
-  urlFoto: string = './assets/img/img.svg';
   public posicao = signal(0);
   public posicaoMaxima = signal(10);
+  public paginacao: string = '1 / 10';
 
   public arrayPaginado = computed<IAlbum[]>(() => this.arraysDivididos(this.appStore.arrayDadosApi())[this.posicao()]);
 
   constructor() { }
 
-  dadosDetalhadoGaleria(dados: any){
+  dadosDetalhadoGaleria(dados: any): void{
     this.appStore.updateArrayDadosDetalhados(dados)
     this.router.navigate(['principal', 'albumDetalhado']);
   }
 
-  avancaPaginacao(){
+  avancaPaginacao(): void{
 
     this.posicao() < this.arrayPaginado().length -1 ? this.posicao.update(posicao => posicao += 1): false;
+    this.paginacao = this.numeroPaginacao();
 
   }
 
-  retornaPaginacao(){
+  retornaPaginacao(): void{
 
     this.posicao() > 0 ? this.posicao.update(posicao => posicao -= 1): false;
+    this.paginacao = this.numeroPaginacao();
 
+  }
+
+  numeroPaginacao(): string{
+    return `${this.posicao() + 1} / ${this.arrayPaginado().length}`
   }
 
   arraysDivididos(array: any): Array<any>{

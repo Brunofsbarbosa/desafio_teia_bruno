@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardInformacoesComponent implements OnInit {
 
+
+  urlFoto: string = './assets/img/img.svg';
+
   constructor() { }
 
   ngOnInit() {

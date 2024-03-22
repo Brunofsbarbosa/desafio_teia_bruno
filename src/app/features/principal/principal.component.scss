@@ -4,12 +4,20 @@
 }
 
 .col-card-informacoes {
-  background-color: #AFCACF;
+  background-color: red;
   // clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
 }
 .col-album {
   // clip-path: polygon(0 0, 100% 1%, 100% 100%, 20% 100%);
-  border: 1px solid red;
+  // border: 1px solid red;
+  background-color: #f6f9f9;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: 3px solid #005ca9;
+  border-radius: 100px 10px 100px 10px;
+  height: 320px;
+  margin: -100px 0 0 196px;
 }
 .div-conteiner-album {
   max-width: 700px;
