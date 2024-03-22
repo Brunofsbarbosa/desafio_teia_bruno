@@ -7,11 +7,12 @@ import { PrincipalRoutes } from './principal.routing';
 import { RouterModule } from '@angular/router';
 import { AlbumDetalhadoComponent } from './components/album-detalhado/album-detalhado.component';
 import { FormsModule } from '@angular/forms';
+import { CardInformacoesComponent } from './components/card-informacoes/card-informacoes.component';
 
 
 
 @NgModule({
-  declarations: [PrincipalComponent, AlbunsComponent, AlbumDetalhadoComponent],
+  declarations: [PrincipalComponent, AlbunsComponent, AlbumDetalhadoComponent, CardInformacoesComponent],
   imports: [
     CommonModule,
     MaterialModule,
