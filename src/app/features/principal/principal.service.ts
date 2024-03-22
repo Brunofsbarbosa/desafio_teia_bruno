@@ -5,6 +5,7 @@ import { HttpService } from '../../core/http/http.service';
 import { environment } from '../../../environments/environment.prod';
 import { AppStore } from '../../core/store/app.store';
 import IAlbum from './models/album.interface';
+import { retry } from 'rxjs';
 
 
 @Injectable({
@@ -20,6 +21,7 @@ constructor() { }
 retornaArrayDadosApi(){
 
   return this.httpService.get(environment.API_URL, { observe: 'response' })
+  .pipe(retry(3))
   .subscribe({
     next: (resp: HttpResponse<any>) => {this.transformaArrayDadosApi(resp.body);},
     error: (error: any) => {console.error('error-retornaArrayDadosApi', error);}

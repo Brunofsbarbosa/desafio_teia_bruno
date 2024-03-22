@@ -22,7 +22,8 @@ export class AlbumDetalhadoComponent implements OnInit {
   public textoFiltroDocumentos = signal('');
   public corBorda: string = '#005CA9';
   public ordemCrescente = signal(false);
-  public urlImg: string = './assets/img/triangulo-laranja.svg'
+  public paginacao: string = '1 / 5';
+  public exibeSpinner: boolean = true;
 
   public numeroAlbumId = computed(() => this.appStore.numeroAlbumId());
   public arrayDadosDetalhadosPaginado = computed<IAlbum[]>(() => {
@@ -30,7 +31,7 @@ export class AlbumDetalhadoComponent implements OnInit {
     const arrayDadosFiltroInput = this.retornaArrayFiltrado(this.appStore.arrayDadosDetalhados());
     const arrayDadosOrdenados = this.retornaArrayOrdenado(arrayDadosFiltroInput);
     const arrayDadosDividido = this.arraysDivididos(arrayDadosOrdenados)[this.posicao()];
-    return arrayDadosDividido;
+    return arrayDadosDividido || [];
 
   });
 
@@ -42,13 +43,19 @@ export class AlbumDetalhadoComponent implements OnInit {
   avancaPaginacao(){
 
     this.posicao() < this.tamanhoArrayDividido -1 ? this.posicao.update(posicao => posicao += 1): false;
+    this.paginacao = this.numeroPaginacao();
 
   }
 
   retornaPaginacao(){
 
     this.posicao() > 0 ? this.posicao.update(posicao => posicao -= 1): false;
+    this.paginacao = this.numeroPaginacao();
 
+  }
+
+  numeroPaginacao(): string{
+    return `${this.posicao() + 1} / ${this.tamanhoArrayDividido}`
   }
 
   arraysDivididos(array: any): Array<any>{

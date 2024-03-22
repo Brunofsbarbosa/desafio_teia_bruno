@@ -23,7 +23,8 @@
   border-radius: 10px;
   margin: 6px;
   max-width: 160px;
-  height: 240px;
+  height: 260px;
+  background-color: #ffffff;
 }
 
 .card-content {
@@ -35,12 +36,16 @@
   width: 120px;
   height: 120px;
   border-radius: 10px;
-  border: 1px solid red;
   margin: auto;
 }
 
 .numero-id {
   margin: 6px 0;
+  font-family: 'Caixa Bd';
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  background: #004075;
 }
 
 .titulo {
@@ -54,7 +59,7 @@
 
 .div-form {
   border: 2px solid #AFCACF;
-  padding: 6px 6px;
+  padding: 6px 10px;
   margin: 10px 0;
   background-color: #f6f9f9;
   border-radius: 10px;
@@ -63,41 +68,64 @@
 .conteiner-albuns {
   border: 2px solid #AFCACF;
   padding: 6px 6px;
-  // margin: 10px 0;
   background-color: #f6f9f9;
   border-radius: 10px;
 }
 
-.btn-ordenar {
-  margin-left: 10px;
+.btn_primary{
+  background-color: #F59200!important;
+  color: #FFF!important;
+  font-family: 'Caixa Sm Bd';
+  font-size: 16;
+  letter-spacing: normal;
   height: 40px;
-  width: 100px;
-  background-color: #F59200;
-  border-radius: 10px;
+  vertical-align: bottom;
+  margin-right: 10px;
 }
 
-
-
-
-
-::ng-deep .form-pesquisa .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
-  padding-top: 9px;
+.btn_primary:hover{
+  background-color: #F59200!important;
+  font-family: 'Caixa Sm Bd';
+  font-size: 16;
+  letter-spacing: normal;
 }
 
-::ng-deep .mat-mdc-icon-button .mat-mdc-button-persistent-ripple{
-  border-radius: 0px;
+.icone-voltar {
+  font-size: 14px;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  color: #262f3b;
+  margin-left: 4px;
 }
 
-// ::ng-deep .mat-mdc-form-field-hint-wrapper {
-//   background: $danger-standard;
-//   border-radius: 4px;
-//   padding: 0 5px !important;
-// }
+.botao-voltar {
+  font-family: "Caixa Regular";
+  font-size: 14px;
+  color: #262f3b;
+  cursor: pointer;
+}
 
-::ng-deep .form-pesquisa .mat-mdc-text-field-wrapper {
-  height: 40px !important;
-  width: 350px !important;
-  border-radius: 4px;
+.botao-voltar:hover {
+  text-decoration: underline;
+}
+
+.icone {
+  color: #262f3b;
+  font-size: 34px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+.texto-paginacao {
+  font-family: 'Caixa regular';
+  font-size: 13px;
+  color: #3a4859;
+}
+
+.col-form {
+  text-align: end;
 }
 
 .form-pesquisa input::placeholder {
@@ -112,12 +140,58 @@
   color: #3a4859;
 }
 
-::ng-deep .form-pesquisa .mdc-text-field--outlined {
-  --mdc-outlined-text-field-focus-outline-width: 1px
+@media screen and (max-width: 705px) {
+  .col-numero {
+    flex: 0 0 auto;
+    width: auto;
+  }
 }
 
-::ng-deep .btn-limpar.mat-mdc-icon-button.mat-mdc-button-base {
-  padding-top: 0px;
+@media screen and (max-width: 660px) {
+
+  .col-form {
+    flex: 0 0 auto;
+    width: auto;
+    text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 532px) {
+
+  .btn_primary {
+    margin: 10px 0
+  }
+}
+
+::ng-deep {
+
+  .form-pesquisa .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 9px;
+  }
+
+  .mat-mdc-icon-button .mat-mdc-button-persistent-ripple{
+    border-radius: 0px;
+  }
+
+  .form-pesquisa .mat-mdc-text-field-wrapper {
+    height: 40px !important;
+    width: 350px !important;
+    border-radius: 4px;
+  }
+
+  .form-pesquisa .mdc-text-field--outlined {
+    --mdc-outlined-text-field-focus-outline-width: 1px
+  }
+
+  .btn-limpar.mat-mdc-icon-button.mat-mdc-button-base {
+    padding-top: 0px;
+  }
+
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+
 }
 
 
@@ -125,46 +199,7 @@
 
 
 
-// ::ng-deep .input-pesquisa .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
-//   padding-top: 9px;
-// }
-
-// ::ng-deep .input-pesquisa .mat-mdc-text-field-wrapper {
-//   height: 40px !important;
-//   width: 332px !important;
-//   background-color: white;
-// }
-
-// ::ng-deep .input-pesquisa  .mdc-text-field--outlined {
-//   --mdc-outlined-text-field-focus-outline-width: 1px!important;
-//   // --mdc-outlined-text-field-input-text-color: #8fb5bc;
-//   --mdc-outlined-text-field-input-text-color: #3a4859;
-//   --mdc-outlined-text-field-hover-outline-color: #8fb5bc;
-//   --mdc-outlined-text-field-outline-color: #8fb5bc;
-// }
-
-// ::ng-deep .input-pesquisa  .mdc-text-field--focused {
-//   --mdc-outlined-text-field-focus-outline-width: 1px!important;
-//   --mdc-outlined-text-field-focus-outline-color: #8fb5bc;
-// }
-
-::ng-deep .mat-mdc-form-field-subscript-wrapper {
-  display: none;
-}
 
 
-// // define a cor do placeholder
-// .input-pesquisa input::placeholder {
-//   // color: $cinza-darker-2;
-//   color: #8fb5bc;
-// }
 
-// .icone-pesquisa{
-//   font-size: 24px!important;
-//   padding-top: -6px!important;
-//   // background-color: $cinza-darker-2;
-//   background-color: #8fb5bc;
-//   color: white;
-//   // margin-left: -22px;
-// }
-// //
+

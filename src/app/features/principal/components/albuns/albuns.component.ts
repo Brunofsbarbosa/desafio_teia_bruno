@@ -16,8 +16,9 @@ export class AlbunsComponent implements OnInit {
   public posicao = signal(0);
   public posicaoMaxima = signal(10);
   public paginacao: string = '1 / 10';
+  public exibeSpinner: boolean = true;
 
-  public arrayPaginado = computed<IAlbum[]>(() => this.arraysDivididos(this.appStore.arrayDadosApi())[this.posicao()]);
+  public arrayPaginado = computed<IAlbum[]>(() => this.arraysDivididos(this.appStore.arrayDadosApi())[this.posicao()] || []);
 
   constructor() { }
 
