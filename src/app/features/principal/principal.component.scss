@@ -1,15 +1,9 @@
 .conteiner {
   min-height: 84vh;
-
 }
 
-.col-card-informacoes {
-  background-color: red;
-  // clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
-}
+
 .col-album {
-  // clip-path: polygon(0 0, 100% 1%, 100% 100%, 20% 100%);
-  // border: 1px solid red;
   background-color: #f6f9f9;
   padding: 24px;
   border-radius: 20px;
@@ -19,6 +13,7 @@
   height: 320px;
   margin: -100px 0 0 196px;
 }
+
 .div-conteiner-album {
   max-width: 700px;
   margin: auto;
@@ -34,4 +29,11 @@
   font-size: 20px;
   color: #3a4859;
 }
+
+@media (max-width: 1150px) {
+  .div-album {
+    margin-left: 10px;
+  }
+}
+
 

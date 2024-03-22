@@ -14,7 +14,7 @@
       <span class="texto-paginacao">{{paginacao}}</span>
     </div>
     <div class="col text-start">
-      <mat-icon class="icone" (click)="avancaPaginacao()" [style]=" this.posicao() < this.arrayPaginado().length -1 ? '' : 'opacity: 0.5'">arrow_forward_ios</mat-icon>
+      <mat-icon class="icone" (click)="avancaPaginacao()" [style]=" (this.arrayPaginado().length > 0) && (this.posicao() < this.arrayPaginado().length -1) ? '' : 'opacity: 0.5'">arrow_forward_ios</mat-icon>
     </div>
   </div>
 </div>
