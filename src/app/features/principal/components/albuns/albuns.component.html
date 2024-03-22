@@ -1,6 +1,6 @@
 <div class="row g-0">
   <div class="col div-col" *ngFor="let item of arrayPaginado()">
-    <mat-card class="card" (click)="dadosDetalhadoGaleria(item.dados)">
+    <mat-card class="card" (click)="dadosDetalhadoGaleria(item.albumId, item.dados)">
       <mat-card-content class="card-content">
         <span class="id-album">{{item.albumId}}</span>
       </mat-card-content>

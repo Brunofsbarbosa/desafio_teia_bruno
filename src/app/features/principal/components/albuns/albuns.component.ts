@@ -21,8 +21,10 @@ export class AlbunsComponent implements OnInit {
 
   constructor() { }
 
-  dadosDetalhadoGaleria(dados: any): void{
-    this.appStore.updateArrayDadosDetalhados(dados)
+  dadosDetalhadoGaleria(albumId: number, dados: any): void{
+
+    this.appStore.updateNumeroAlbumId(albumId);
+    this.appStore.updateArrayDadosDetalhados(dados);
     this.router.navigate(['principal', 'albumDetalhado']);
   }
 

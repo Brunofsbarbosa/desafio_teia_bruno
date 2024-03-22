@@ -18,18 +18,18 @@ export class AlbumDetalhadoComponent implements OnInit {
   public posicao = signal(0);
   public posicaoMaxima = signal(10);
   public tamanhoArrayDividido: number = 0;
-  textoInput: string = '';
-  textoFiltroDocumentos = signal('');
-  corBorda = '#005CA9';
-  ordemCrescente = signal(false);
+  public textoInput: string = '';
+  public textoFiltroDocumentos = signal('');
+  public corBorda: string = '#005CA9';
+  public ordemCrescente = signal(false);
+  public urlImg: string = './assets/img/triangulo-laranja.svg'
 
-
+  public numeroAlbumId = computed(() => this.appStore.numeroAlbumId());
   public arrayDadosDetalhadosPaginado = computed<IAlbum[]>(() => {
 
     const arrayDadosFiltroInput = this.retornaArrayFiltrado(this.appStore.arrayDadosDetalhados());
     const arrayDadosOrdenados = this.retornaArrayOrdenado(arrayDadosFiltroInput);
     const arrayDadosDividido = this.arraysDivididos(arrayDadosOrdenados)[this.posicao()];
-
     return arrayDadosDividido;
 
   });

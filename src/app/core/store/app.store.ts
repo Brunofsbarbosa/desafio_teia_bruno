@@ -9,6 +9,7 @@ export class AppStore {
 
   public arrayDadosApi = signal<IAlbum[]>([]);
   public arrayDadosDetalhados = signal<IAlbum[]>([]);
+  public numeroAlbumId = signal(0)
 
   //mutations ====================================
 
@@ -18,6 +19,10 @@ export class AppStore {
 
   public updateArrayDadosDetalhados(payload: any) {
     this.arrayDadosDetalhados.update(dadosApi => dadosApi = payload);
+  }
+
+  public updateNumeroAlbumId(payload: any) {
+    this.numeroAlbumId.set(payload);
   }
 
 

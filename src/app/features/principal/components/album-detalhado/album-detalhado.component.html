@@ -1,7 +1,18 @@
 <div>
-  <span routerLink="principal">Voltar</span>
-  <div class="row g-0">
+
+  <div class="div-numero">
+    <!-- <img class="img-triangulo" [src]="urlImg"> -->
+    <span routerLink="principal">Voltar</span>
+  </div>
+
+  <div class="row g-0 div-form mx-1">
     <div class="col">
+      <span class="numero-album"> Album {{numeroAlbumId()}}</span>
+    </div>
+    <div class="col text-end">
+      <!-- <div class="btn-ordenar"> -->
+        <span class="btn-ordenar" (click)="alteraOrdenacaoDadosArray()">ordenar</span>
+      <!-- </div> -->
       <mat-form-field appearance="outline" class="form-pesquisa" mat-elevation-z5 [style.--mdc-outlined-text-field-outline-color]="corBorda" [style.--mdc-outlined-text-field-focus-outline-color]="corBorda">
         <input
           [(ngModel)]="textoInput"
@@ -12,28 +23,22 @@
           <button *ngIf="textoInput" matSuffix mat-icon-button aria-label="Clear" (click)="limparInput()" class="btn-limpar">
             <mat-icon class="limpar">close</mat-icon>
           </button>
-        </mat-form-field>
-    </div>
-    <div class="col">
-      <button (click)="alteraOrdenacaoDadosArray()">ordenar</button>
+      </mat-form-field>
     </div>
   </div>
-  <div class="row g-0">
+
+  <div class="row g-0 conteiner-albuns mx-1">
     <div class="col" *ngFor="let item of arrayDadosDetalhadosPaginado()">
-      <!-- <img class="img" height="100px" [src]="urlFoto"> -->
       <mat-card class="card">
         <mat-card-content class="card-content">
-          <span>{{item.albumId}}</span>
-          <span>{{item.id}}</span>
-          <span>{{item.title}}</span>
-          <img [src]="item.thumbnailUrl"/>
+          <!-- <span>{{item.albumId}}</span> -->
+          <img [src]="item.thumbnailUrl" class="img"/>
+          <span class="numero-id">{{item.id}}</span>
+          <span class="titulo">{{item.title}}</span>
+
         </mat-card-content>
       </mat-card>
-  <!-- <app-album-detalhado></app-album-detalhado> routerLink="albumDetalhado"-->
-      <!-- <div *ngFor="let teste of item.dados">
-        <span>{{teste.id}}</span>
 
-      </div> -->
     </div>
     <span (click)="avancaPaginacao()">avança</span>
     <span (click)="retornaPaginacao()">retorna</span>
