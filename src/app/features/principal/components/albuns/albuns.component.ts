@@ -56,7 +56,6 @@ export class AlbunsComponent implements OnInit {
       const arrayParcial = arrayOriginal.slice(i, i + this.posicaoMaxima());
       arraysDivididos.push(arrayParcial);
     }
-    console.log(arraysDivididos)
     return arraysDivididos
   }
 
