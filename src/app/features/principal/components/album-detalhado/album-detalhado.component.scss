@@ -44,8 +44,8 @@
   font-family: 'Caixa Bd';
   font-size: 14px;
   text-align: center;
-  color: #fff;
-  background: #004075;
+  color: #004075;
+  background: #AFCACF;
 }
 
 .titulo {
@@ -169,6 +169,10 @@
   .form-pesquisa .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
     padding-top: 9px;
   }
+
+  .form-pesquisa .mat-mdc-icon-button .mat-mdc-button-persistent-ripple {
+    display: none;
+}
 
   .mat-mdc-icon-button .mat-mdc-button-persistent-ripple{
     border-radius: 0px;
